@@ -1,38 +1,39 @@
 # MyWorkout
 
-Webapp per iPhone (PWA) per pianificare e tracciare i workout con corpo libero, sbarra per
-trazioni, manubri, EZ bar, pulley e panca piana/inclinata. Nessun server e nessun account: i
-dati restano sul telefono (localStorage), con backup esportabile in JSON.
+An iPhone web app (PWA) to plan and track workouts with bodyweight, a pull-up bar, dumbbells,
+an EZ bar, a cable pulley and a flat/incline bench. No server and no account: data stays on the
+phone (localStorage), with a JSON backup you can export.
 
-## Cosa fa
+Live: https://hopeyoudiequick.github.io/myworkout/
 
-- **Schede**: esercizi con serie, ripetizioni, recupero e note, assegnati ai giorni della settimana.
-- **Workout**: timer della sessione (anche in pausa e con l'app chiusa), spunta di ogni serie,
-  timer di recupero con suono, nota per esercizio (es. il peso) e promemoria dell'ultima volta.
-- **Riepilogo**: durata, serie fatte, esercizi saltati, zone previste ma non allenate, mappa dei
-  muscoli della sessione e zone ancora da allenare negli ultimi 7 giorni.
-- **Storico**: ore per settimana, mese e totale, e muscoli allenati negli ultimi 30 giorni.
-- **Esercizi**: 347 esercizi con immagini animate, istruzioni, link a YouTube e il tuo video
-  di riferimento (link YouTube incorporato).
+## Features
 
-## Provarla sul Mac
+- **Plans**: exercises with sets, reps, rest and notes, assigned to days of the week.
+- **Workout**: session timer (keeps running with the app closed, can be paused), tick off each
+  set, rest timer with a sound, a note per exercise (e.g. the weight) and what you noted last time.
+- **Summary**: duration, sets done, skipped exercises, planned areas you didn't train, a muscle
+  map of the session and the areas still untrained in the last 7 days.
+- **History**: hours per week, month and in total, plus muscles trained in the last 30 days.
+- **Exercises**: 347 exercises with an animated demo (tap the thumbnail for full screen, with
+  speed control), instructions, a YouTube link and your own reference video (embedded YouTube link).
+
+## Run it on the Mac
 
 ```bash
 cd ~/Desktop/Apps/MyWorkout && python3 -m http.server 8765
 ```
 
-Poi apri http://localhost:8765.
+Then open http://localhost:8765.
 
-## Installarla sull'iPhone
+## Install it on the iPhone
 
-Serve un indirizzo HTTPS (per funzionare offline e tenere i dati sempre allo stesso indirizzo).
-Il modo più semplice è un hosting statico gratuito (Netlify Drop, GitHub Pages, Cloudflare Pages):
-carica il contenuto di questa cartella, apri l'indirizzo in **Safari** sull'iPhone, tocca
-**Condividi → Aggiungi alla schermata Home**.
+Open the live URL in **Safari**, tap **Share → Add to Home Screen**. Open it once with a
+connection so it can cache the images; after that it works offline.
 
-Dopo un aggiornamento dei file basta riaprire l'app con la connessione attiva.
+After pushing an update to `main`, GitHub Pages redeploys in about a minute and the app picks
+up the new version the next time it is opened online.
 
-## Rigenerare il catalogo
+## Rebuilding the catalogue
 
-`data.js` e `img/` sono generati da free-exercise-db con `tools/build_catalog.py` (icone: `tools/make_icons.py`)
-(vedi `LICENSES.md` per le licenze).
+`data.js` and `img/` are generated from free-exercise-db by `tools/build_catalog.py`
+(icons: `tools/make_icons.py`). See `LICENSES.md` for licences.

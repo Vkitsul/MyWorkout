@@ -1,15 +1,15 @@
-# Licenze di terze parti
+# Third-party licences
 
-## Esercizi e immagini — free-exercise-db
+## Exercises and images — free-exercise-db
 
-I testi degli esercizi e le immagini in `img/` provengono da
-[free-exercise-db](https://github.com/yuhonas/free-exercise-db) di yuhonas, rilasciato nel
-pubblico dominio (The Unlicense). Le immagini sono state ridimensionate e convertite in WebP.
+The exercise texts and the images in `img/` come from
+[free-exercise-db](https://github.com/yuhonas/free-exercise-db) by yuhonas, released into the
+public domain (The Unlicense). The images were resized and converted to WebP.
 
-## Sagome del corpo — MuscleMap
+## Body outlines — MuscleMap
 
-Le sagome dei muscoli (`window.BODY` in `data.js`) derivano da
-[MuscleMap](https://github.com/melihcolpan/MuscleMap) di Melih Colpan, usato con licenza MIT:
+The muscle outlines (`window.BODY` in `data.js`) are derived from
+[MuscleMap](https://github.com/melihcolpan/MuscleMap) by Melih Colpan, used under the MIT License:
 
 ```
 MIT License
@@ -35,8 +35,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-## Ispirazione
+## Inspiration
 
-L'idea dell'app viene da [openGym](https://github.com/DuarteSantos8/openGym). Nessun codice né
-animazione di openGym è incluso: le animazioni di openGym sono licenziate da Gym Visual e non
-sono riutilizzabili.
+The idea comes from [openGym](https://github.com/DuarteSantos8/openGym). No openGym code or
+animation is included: openGym's animations are licensed from Gym Visual and may not be reused.

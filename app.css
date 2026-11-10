@@ -303,3 +303,43 @@ ol.ins li { margin-bottom: 8px; color: var(--text); font-size: 15px; }
 
 .filters { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0 12px; }
 .filters #f-zone { grid-column: 1 / -1; }
+
+/* ---------- zoomable thumbnails ---------- */
+.thumb-wrap { position: relative; flex: none; display: block; border-radius: 8px; }
+.zoom-badge { position: absolute; right: 3px; bottom: 3px; width: 18px; height: 18px; border-radius: 6px; background: rgba(0,0,0,.55); color: #fff; display: grid; place-items: center; pointer-events: none; }
+.zoom-badge svg { width: 12px; height: 12px; stroke-width: 2.4; }
+.zoom-badge.big { width: 32px; height: 32px; right: 8px; bottom: 8px; border-radius: 10px; }
+.zoom-badge.big svg { width: 18px; height: 18px; }
+.demo[data-zoom] { cursor: zoom-in; }
+
+/* ---------- full-screen demo ---------- */
+.zoom-wrap { position: fixed; inset: 0; z-index: 70; background: #000; color: #fff; display: flex; flex-direction: column; padding: calc(var(--safe-top) + 8px) calc(env(safe-area-inset-right, 0px) + 12px) calc(var(--safe-bottom) + 12px) calc(env(safe-area-inset-left, 0px) + 12px); animation: fade .18s ease-out; }
+.zoom-wrap[hidden] { display: none; }
+.zoom-top { display: flex; align-items: center; gap: 10px; padding: 4px 4px 10px; }
+.zoom-top b { font-size: 17px; line-height: 1.25; }
+.zoom-x { width: 42px; height: 42px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; display: grid; place-items: center; flex: none; }
+.zoom-x svg { width: 22px; height: 22px; }
+.zoom-stage { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+.zoom-demo { position: relative; width: 100%; max-width: calc((100dvh - 260px) * 1.5); aspect-ratio: 3 / 2; background: #fff; border-radius: 14px; overflow: hidden; }
+.zoom-demo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.zoom-demo .f2 { opacity: 0; }
+.zoom-demo.smooth .f2 { animation: xfade var(--dur) ease-in-out infinite; }
+.zoom-demo.snap .f2 { animation: flip var(--dur) steps(1, end) infinite; }
+@keyframes xfade { 0%, 18% { opacity: 0; } 45%, 68% { opacity: 1; } 95%, 100% { opacity: 0; } }
+.zoom-tag { font-size: 13px; color: rgba(255,255,255,.65); }
+.zoom-ctl { display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 560px; margin: 10px auto 0; }
+.seg { display: flex; background: rgba(255,255,255,.1); border-radius: 12px; padding: 3px; }
+.seg button { flex: 1; border: 0; background: none; color: #fff; padding: 9px 4px; border-radius: 9px; font-size: 14px; font-weight: 600; min-height: 38px; }
+.seg button.on { background: #fff; color: #000; }
+.zoom-ctl .btn { background: rgba(255,255,255,.14); color: #fff; }
+@media (orientation: landscape) and (max-height: 520px) {
+  .zoom-wrap { flex-direction: row; flex-wrap: wrap; align-content: flex-start; }
+  .zoom-top { width: 100%; padding-bottom: 4px; }
+  .zoom-stage { flex: 1 1 60%; height: calc(100dvh - 90px); }
+  .zoom-demo { max-width: calc((100dvh - 110px) * 1.5); }
+  .zoom-tag { display: none; }
+  .zoom-ctl { flex: 0 0 210px; margin: 0 0 0 12px; justify-content: center; }
+  .seg { flex-wrap: wrap; }
+  .seg button { flex: 1 1 45%; }
+}
+@media (prefers-reduced-motion: reduce) { .zoom-demo.smooth .f2, .zoom-demo.snap .f2 { animation-duration: calc(var(--dur) * 1.6); } }

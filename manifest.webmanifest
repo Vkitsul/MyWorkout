@@ -1,12 +1,11 @@
 {
   "name": "MyWorkout",
   "short_name": "MyWorkout",
-  "description": "Pianifica e traccia i tuoi workout",
-  "lang": "it",
-  "start_url": "./#/oggi",
+  "description": "Plan and track your workouts",
+  "lang": "en",
+  "start_url": "./#/today",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#0d0f12",
   "theme_color": "#0d0f12",
   "icons": [
