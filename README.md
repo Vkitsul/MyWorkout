@@ -4,7 +4,7 @@ An iPhone web app (PWA) to plan and track workouts with bodyweight, a pull-up ba
 an EZ bar, a cable pulley and a flat/incline bench. No server and no account: data stays on the
 phone (localStorage), with a JSON backup you can export.
 
-Live: https://hopeyoudiequick.github.io/myworkout/
+Live: https://hopeyoudiequick.github.io/MyWorkout/
 
 ## Features
 
